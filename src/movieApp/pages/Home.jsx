@@ -11,9 +11,12 @@ import YouTube from 'react-youtube';
 import { NavbarApp } from "../components/NavbarApp";
 import { Carousel } from "../components/Carousel";
 import { ProductionHouse } from "../components/ProductionHouse";
+import GetApi from "../../services/GetApi";
+import { listCategorySeries, listCategoryMovies } from "../../store/movieApp/movieAppSlice";
+import { GenreMovieList } from "../components/GenreMovieList";
 
 const Home = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { displayName, photoURL } = useSelector(state => state.auth);
 
   // const onLogout = () => {
@@ -91,9 +94,19 @@ const Home = () => {
     e.preventDefault();
     fetchMovies(searchKey);
   };
-
+  // ---------------------------------------------------------
+  const getCategory = async () => {
+   await GetApi.getCategoryMovies.then(resp => {
+      dispatch(listCategoryMovies(resp.data.genres))
+    })
+    await GetApi.getCategorySeries.then(resp => {
+      dispatch(listCategorySeries(resp.data.genres))
+    })   
+  };
+  
   useEffect(() => {
     fetchMovies();
+    getCategory()
   }, []);
   return (
     <>
@@ -121,6 +134,8 @@ const Home = () => {
         <NavbarApp displayName={displayName} />
         <Carousel />
         <ProductionHouse />
+
+       <GenreMovieList/>
       </Grid>
     </>
   )

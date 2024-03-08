@@ -11,7 +11,7 @@ export const Carousel = () => {
 
     const getTrendingMovies = () => {
         GetApi.getTrendingVideos.then(resp => {
-            console.log(resp.data.results);
+            // console.log(resp.data.results);
             setMovieList(resp.data.results)
         })
     }
@@ -30,12 +30,12 @@ export const Carousel = () => {
     return (
 
         <div>
-            <ArrowBackIosNewIcon
+            <ArrowBackIosNewIcon fontSize="large"
                 className="hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer "
                 onClick={() => sliderLeft(elementRef.current)}
             />
 
-            <ArrowForwardIosIcon
+            <ArrowForwardIosIcon fontSize="large"
                 className='hidden md:block text-white text-[30px] absolute mx-8 mt-[150px] cursor-pointer right-0'
                 onClick={() => sliderRight(elementRef.current)}
             />

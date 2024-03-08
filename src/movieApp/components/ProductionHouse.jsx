@@ -7,25 +7,29 @@ export const ProductionHouse = () => {
 
     let pixar = 'https://th.bing.com/th/id/OIP.TSmFkbwkWWYC8nt_dVv6WwHaEo?rs=1&pid=ImgDetMain';
     let disneyI = '/public/disney.png';
+    let accion = '/public/card-accion.png';
+    let aventura = '/public/card-aventura.png';
+    let animacion = '/public/card-animacion.png';
+    let crimen = '/public/card-crimen.png';
     const productionHouseList = [
         {
             id: 1,
-            image: disneyI,
+            image: accion,
             video: disneyV
         },
         {
             id: 2,
-            image: pixar,
+            image: aventura,
             video: disneyV
         },
         {
             id: 3,
-            image: disneyI,
+            image: animacion,
             video: disneyV
         },
         {
             id: 4,
-            image: disneyI,
+            image: crimen,
             video: disneyV
         },
         {
@@ -37,8 +41,8 @@ export const ProductionHouse = () => {
     ]
     return (
         <div className='flex gap-4 md:gap-5   '>
-            {productionHouseList.map((item) => (
-                <div className='border-[2px] border-gray-600
+            {productionHouseList.map((item, index) => (
+                <div key={index} className='border-[2px] border-gray-600
             rounded-lg hover:scale-110 transition-all duration-300
             ease-in-out cursor-pointer relative shadow-xl 
             shadow-gray-800
@@ -46,8 +50,8 @@ export const ProductionHouse = () => {
                     <video autoPlay loop playsInline muted
                         className='   videoCard '>
                         <source src={item.video} type="video/mp4" />
-                    </video>
 
+                    </video>
 
                     {/* <Card sx={{ maxWidth: 345 }}> */}
                     <CardMedia
@@ -58,7 +62,7 @@ export const ProductionHouse = () => {
                         alt="imagen"
                     />
                     {/* <CardActionArea> */}
-                        {/* <CardContent>
+                    {/* <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 Lizard
                             </Typography>

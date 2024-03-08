@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* html{
+  background-color: '#1a1d29';
+} */
 .box-shadow{
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -20,6 +24,7 @@
   opacity: 0;
   position: absolute;
   z-index: 0;
+  
  
 }
 .imgCard{
@@ -32,6 +37,7 @@
 .videoCard:hover{
   opacity: 10;
   height: auto;
+  opacity: 0.4;
 }
 
 
