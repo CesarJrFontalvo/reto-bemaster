@@ -10,6 +10,8 @@ export const AuthLayout = ({ children, title = "" }) => {
       justifyContent="center"
       sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }}
     >
+      <img src="/bemaster-7234577.png" alt="logo beMaster" className="mb-4" style={{height:'100px',maxWidth: '300px', }} />
+
       <Grid
         item
         className="box-shadow"

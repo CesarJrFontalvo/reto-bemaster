@@ -3,8 +3,8 @@ import { Alert, Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
 import { useMemo, useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { startCreatingUserWithEmailPassword } from "../../store/auth/thunk";
+import { useDispatch, useSelector } from "react-redux";
+import { startCreatingUserWithEmailPassword } from "../../store/auth/thunk";
 
 const formValidations = {
   email: [(value) => value.includes("@"), "El correo debe de tener un arroba"],
@@ -19,9 +19,9 @@ const formData = {
 };
 
 export const RegisterPages = () => {
-//   const dispatch = useDispatch();
-//   const { status, errorMessage } = useSelector(state => state.auth);
-//   const isCheckingAuthentication = useMemo(() => status === 'checking', [status])
+  const dispatch = useDispatch();
+  const { status, errorMessage } = useSelector(state => state.auth);
+  const isCheckingAuthentication = useMemo(() => status === 'checking', [status])
 
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -35,7 +35,7 @@ export const RegisterPages = () => {
     setFormSubmitted(true);
     if (!isFormValid) return;
     console.log(formState)
-    // dispatch(startCreatingUserWithEmailPassword(formState))
+    dispatch(startCreatingUserWithEmailPassword(formState))
   };
 
   return (
@@ -88,10 +88,10 @@ export const RegisterPages = () => {
             <Grid
               item
               xs={12}
-            //   display={!!errorMessage ? '' : 'none'}
+              display={!!errorMessage ? '' : 'none'}
               >
               <Alert severity="error">
-                {/* {errorMessage} */}
+                {errorMessage}
               </Alert>
             </Grid>
           </Grid>
@@ -99,7 +99,7 @@ export const RegisterPages = () => {
           <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
             <Grid item xs={12}>
               <Button 
-            //   disabled={isCheckingAuthentication} 
+              disabled={isCheckingAuthentication} 
               type="submit" variant="contained" fullWidth>
                 Register
               </Button>

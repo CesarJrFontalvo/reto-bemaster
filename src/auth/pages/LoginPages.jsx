@@ -14,30 +14,29 @@ const formDate = {
 }
 
 export const LoginPages = () => {
-      const { status, errorMessage } = useSelector((state) => state.auth);
+    const { status, errorMessage } = useSelector((state) => state.auth);
 
-      const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const { email, password, onInputChange } = useForm(formDate);
 
-      const isAuthenticating = useMemo(() => status === "checking", [status]);
+    const isAuthenticating = useMemo(() => status === "checking", [status]);
 
-      const onSubmit = (event) => {
+    const onSubmit = (event) => {
         event.preventDefault();
-        console.log({ email, password })
+        // console.log({ email, password })
         dispatch(startLoginWithEmailPassword({ email, password }));
 
     };
 
     const onGoogleSignIn = () => {
-        console.log("onGoogleSignIn");
+        // console.log("onGoogleSignIn");
         dispatch(startGoogleSignIn());
     };
     return (
         <AuthLayout title="Login">
             <form onSubmit={onSubmit} className='animate__animated animate__fadeIn animate__faster'>
                 <Grid container>
-
                     <Grid item xs={12} sx={{ mt: 2 }}>
                         <TextField
                             label="Correo"
@@ -102,7 +101,7 @@ export const LoginPages = () => {
                     </Grid>
 
                     <Grid container direction="row" justifyContent="end">
-                        <Link component={RouterLink}  to="/auth/register"> 
+                        <Link component={RouterLink} to="/auth/register">
                             Crear una cuenta
                         </Link>
                     </Grid>
