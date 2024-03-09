@@ -48,7 +48,7 @@ export const NavbarApp = ({ displayName }) => {
         }
     ]
     return (
-        <div className='flex items-center justify-between p-5'>
+        <div className='flex items-center justify-between pt-1 px-5 navbar-app'>
             <a href='/'> <img src='/bemaster-7234577.png' className='w-[70px] md:w-[115px] object-cover cursor-pointer NameDisplay' /></a>
             <div className='flex  gap-8 items-center'>
 
@@ -76,10 +76,10 @@ export const NavbarApp = ({ displayName }) => {
                     <h1 className='NameDisplay p-1 m-2 text-white  text-[17px] font-semibold cursor-pointer'>  {displayName}</h1>
                 </div>
 
-                <IconButton color="error"
+                <IconButton color="error" sx={{ fontSize: 15 }}
                     onClick={onLogout}
                     className='w-[15px] p-1'>
-                    <LogoutOutlined />
+                    <LogoutOutlined  />
                     Logout
                 </IconButton>
             </div>

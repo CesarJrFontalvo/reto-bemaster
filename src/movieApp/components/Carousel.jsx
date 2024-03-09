@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import GetApi from '../../services/GetApi';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useNavigate } from 'react-router-dom';
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const screenWidth = window.innerWidth;
 
@@ -9,6 +10,10 @@ export const Carousel = () => {
     const [movieList, setMovieList] = useState([]);
     const elementRef = useRef();
 
+    const navigate = useNavigate();
+    const selectId = (id) => {
+        navigate(`detail/${id}`)
+    }
     const getTrendingMovies = () => {
         GetApi.getTrendingVideos.then(resp => {
             // console.log(resp.data.results);
@@ -43,7 +48,10 @@ export const Carousel = () => {
 
             <div className='flex overflow-x-auto w-full px-16 py-4 scrollbar-none scroll-smooth' ref={elementRef}>
                 {movieList.map((item, index) => (
-                    <img key={index} src={IMAGE_BASE_URL + item.backdrop_path}
+                    <img 
+                    onClick={() => selectId(item.id)}
+                    key={index} 
+                    src={IMAGE_BASE_URL + item.backdrop_path}
                         className='min-w-full  md:h-[310px] object-cover object-left-top mr-5 rounded-md img-carousel'
                     />
                 ))}

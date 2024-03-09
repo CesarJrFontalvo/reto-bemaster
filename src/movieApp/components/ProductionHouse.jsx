@@ -11,6 +11,7 @@ export const ProductionHouse = () => {
     let aventura = '/public/card-aventura.png';
     let animacion = '/public/card-animacion.png';
     let crimen = '/public/card-crimen.png';
+    let comedia = '/public/card-comedia.png';
     const productionHouseList = [
         {
             id: 1,
@@ -29,12 +30,12 @@ export const ProductionHouse = () => {
         },
         {
             id: 4,
-            image: crimen,
+            image: comedia,
             video: disneyV
         },
         {
             id: 5,
-            image: disneyI,
+            image: crimen,
             video: disneyV
         },
 
