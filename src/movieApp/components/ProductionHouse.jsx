@@ -7,11 +7,11 @@ import aventuraV from '/public/aventuraV.mp4'
 
 let pixar = 'https://th.bing.com/th/id/OIP.TSmFkbwkWWYC8nt_dVv6WwHaEo?rs=1&pid=ImgDetMain';
 let disneyI = '/public/disney.png';
-let accion = '/public/card-accion.png';
-let aventura = '/public/card-aventura.png';
-let animacion = '/public/card-animacion.png';
-let crimen = '/public/card-crimen.png';
-let comedia = '/public/card-comedia.png';
+let accion = 'https://res.cloudinary.com/difxvqjj3/image/upload/v1710775767/Proyecto2_bodegas/mok52uxxfqdu6ss5mviq.png';
+let aventura = 'https://res.cloudinary.com/difxvqjj3/image/upload/v1710775768/Proyecto2_bodegas/ekycdmgjmehjyrsgg4ql.png';
+let animacion = 'https://res.cloudinary.com/difxvqjj3/image/upload/v1710775770/Proyecto2_bodegas/kyvlbcxef47wy2yi6prw.png';
+let crimen = 'https://res.cloudinary.com/difxvqjj3/image/upload/v1710775773/Proyecto2_bodegas/eoewriwxoxrmdbe2rc8k.png';
+let comedia = 'https://res.cloudinary.com/difxvqjj3/image/upload/v1710775771/Proyecto2_bodegas/dkrh33eb95c5kojl5rjn.png';
 
 export const ProductionHouse = () => {
     // let disneyV ={};
