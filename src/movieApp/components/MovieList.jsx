@@ -32,7 +32,7 @@ export const MovieList = ({ genreId, i }) => {
                 className={`text-[50px] text-white p-2 z-10 cursor-pointer `}
             />
 
-            <div key={i + 1} ref={elementRef} className='flex overflow-x-auto gap-8 scrollbar-none scroll-smooth pt-4 px-3 pb-4'>
+            <div  ref={elementRef} className='flex overflow-x-auto gap-8 scrollbar-none scroll-smooth pt-4 px-3 pb-4'>
                 {movieList.map((item, index) => (
                     <MovieCard index={index} movie={item} />
                 ))}

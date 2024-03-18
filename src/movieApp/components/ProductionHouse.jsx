@@ -1,42 +1,55 @@
 import React from 'react'
-import disneyV from '/public/eFootball™ 2024 2023-09-15 11-44-03.mp4'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+let accionV = '/public/accionV.mp4';
+import animacionV from '/public/animacionV.mp4'
+import aventuraV from '/public/aventuraV.mp4'
+
+let pixar = 'https://th.bing.com/th/id/OIP.TSmFkbwkWWYC8nt_dVv6WwHaEo?rs=1&pid=ImgDetMain';
+let disneyI = '/public/disney.png';
+let accion = '/public/card-accion.png';
+let aventura = '/public/card-aventura.png';
+let animacion = '/public/card-animacion.png';
+let crimen = '/public/card-crimen.png';
+let comedia = '/public/card-comedia.png';
+
 export const ProductionHouse = () => {
     // let disneyV ={};
-    let pixarV = 'https://www.youtube.com/watch?v=gX0CmJa5Gdk&ab_channel=marvelgames';
+    const navigate = useNavigate();
+    const selectId = (category) => {
+        navigate(`categori/${category}`)
+    }
 
-    let pixar = 'https://th.bing.com/th/id/OIP.TSmFkbwkWWYC8nt_dVv6WwHaEo?rs=1&pid=ImgDetMain';
-    let disneyI = '/public/disney.png';
-    let accion = '/public/card-accion.png';
-    let aventura = '/public/card-aventura.png';
-    let animacion = '/public/card-animacion.png';
-    let crimen = '/public/card-crimen.png';
-    let comedia = '/public/card-comedia.png';
     const productionHouseList = [
         {
             id: 1,
+            category: 28,
             image: accion,
-            video: disneyV
+            video: accionV
         },
         {
             id: 2,
+            category: 12,
             image: aventura,
-            video: disneyV
+            video: aventuraV
         },
         {
             id: 3,
+            category: 16,
             image: animacion,
-            video: disneyV
+            video: animacionV
         },
         {
             id: 4,
+            category: 35,
             image: comedia,
-            video: disneyV
+            video: animacionV
         },
         {
             id: 5,
+            category: 80,
             image: crimen,
-            video: disneyV
+            video: animacionV
         },
 
     ]
@@ -48,13 +61,14 @@ export const ProductionHouse = () => {
             ease-in-out cursor-pointer relative shadow-xl 
             shadow-gray-800
             '>
-                    <video autoPlay loop playsInline muted
+                    <video 
+                    onClick={() => selectId(item.category)}
+                    autoPlay loop playsInline muted
                         className='   videoCard '>
                         <source src={item.video} type="video/mp4" />
 
                     </video>
 
-                    {/* <Card sx={{ maxWidth: 345 }}> */}
                     <CardMedia
                         className=' imgCard'
                         component="img"
@@ -62,21 +76,6 @@ export const ProductionHouse = () => {
                         image={item.image}
                         alt="imagen"
                     />
-                    {/* <CardActionArea> */}
-                    {/* <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                Lizard
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                species, ranging across all continents except Antarctica
-                            </Typography>
-                        </CardContent> */}
-                    {/* </CardActionArea> */}
-                    {/* </Card> */}
-                    {/* <img src={item.image} className='w-full z-[1]  imgCard' /> */}
-
-
                 </div>
             ))}
 

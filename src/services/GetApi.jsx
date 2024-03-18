@@ -12,7 +12,7 @@ const movieByGenreBaseURL = 'https://api.themoviedb.org/3/discover/movie?api_key
 const getCategoryMovies = axios.get(`${baseUrl}/genre/movie/list?api_key=${api_key}`);
 const getCategorySeries = axios.get(`${baseUrl}/genre/tv/list?api_key=${api_key}`);
 
-const getMovieByGenreId = (id) => axios.get(movieByGenreBaseURL + "&with_genres=" + id);
+const getMovieByGenreId = (id) => axios.get(`${movieByGenreBaseURL}&with_genres=${id}` + api_key);
 const getMovieId = (id) => axios.get(`${baseUrl}/movie/${id}?api_key=${api_key}`);
 
 const getTrendingVideos = axios.get(`${baseUrl}/trending/all/day?api_key=${api_key}`);

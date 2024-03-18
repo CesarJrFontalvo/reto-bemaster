@@ -11,6 +11,7 @@ import { LogoutOutlined } from '@mui/icons-material';
 import DialpadIcon from '@mui/icons-material/Dialpad';
 import { useDispatch } from 'react-redux';
 import { startLogout } from '../../store/auth/thunk';
+import { Link } from 'react-router-dom';
 
 
 export const NavbarApp = ({ displayName }) => {
@@ -70,16 +71,19 @@ export const NavbarApp = ({ displayName }) => {
                         </div> : null}
                     </div>
                 </div>
-                <div className='flex items-center  '>
-                    <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
-                        className='w-[30px] rounded-full ' />
-                    <h1 className='NameDisplay p-1 m-2 text-white  text-[17px] font-semibold cursor-pointer'>  {displayName}</h1>
-                </div>
+                <Link to={'/'}>
+                    <div className='flex items-center  '>
+                        <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                            className='w-[30px] rounded-full ' />
+                        <h1 className='NameDisplay p-1 m-2 text-white  text-[17px] font-semibold cursor-pointer'>  {displayName}</h1>
+                    </div>
+                </Link>
+
 
                 <IconButton color="error" sx={{ fontSize: 15 }}
                     onClick={onLogout}
                     className='w-[15px] p-1'>
-                    <LogoutOutlined  />
+                    <LogoutOutlined />
                     Logout
                 </IconButton>
             </div>

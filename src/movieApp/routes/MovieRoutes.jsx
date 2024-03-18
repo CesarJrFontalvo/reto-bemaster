@@ -10,7 +10,7 @@ export const MovieRoutes = [
         element: <Home />
     },
     {
-        path: "/categori",
+        path: "/categori/:id",
         element: <ContentCategory />
     },
     {
